@@ -54,12 +54,13 @@ def ways(cents, coin_types=[1, 5]):
 '''
 
 def lowest_score(names, scores):
-    lowest_score_name = names[np.argmin(scores)]
-    return lowest_score_name
+    print("The lowest score is", np.min(scores), "from:", names[np.argmin(scores)]) #added print statement to display the lowest score and name corresponding to it
+    return names[np.argmin(scores)] #returns the name found at the index of the lowest score in the scores array
 
 def sort_names(names, scores):
-    sorted_list = sorted(zip(scores, names), reverse=True)
-    sorted_name = []
-    for name in range(len(sorted_list)):
+    sorted_list = sorted(zip(scores, names), reverse=True) #zips name and scores together into a list and then sorts the list by descending score values
+    sorted_name = [] #creates list to store just the names of the sorted list based on descending score values
+    for name in range(len(sorted_list)): #for name in the range of 0 to the length of the sorted list, append each name to the sorted names list in order
         sorted_name.append(sorted_list[name][1])
-    return sorted_name
+    print("Names sorted by descending scores:\n", sorted_list)#print statement to display the sorted list of names and scores by descending score values
+    return sorted_name #returns JUST the sorted names list for autograder purposes
