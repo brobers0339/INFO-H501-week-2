@@ -11,7 +11,7 @@ def ways(cents, coin_types=[1, 5]):
         pennies = cents - (nickels * 5) #calculate remaining cents after using nickels at the current iteration
         if pennies >= 0: #only count valid combinations where pennies is non-negative
             ways_total += 1 #add one to the valid combinations count
-        list_ways.append((nickels, pennies)) #list represents the yield function instead of using it due to the return needed at the end of the function
+            list_ways.append((nickels, pennies)) #list represents the yield function instead of using it due to the return needed at the end of the function
     #adds print statements to show the different ways to make change
     print("The following are ways to make change for", cents, "cents using nickels and pennies:")
     for way in list_ways: 
