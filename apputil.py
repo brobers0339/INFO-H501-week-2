@@ -10,7 +10,7 @@ def ways(cents, coin_types=[1, 5]):
         pennies = cents - (nickels * 5) #calculate remaining cents after using nickels at the current iteration
         if pennies >= 0: #only count valid combinations where pennies is non-negative
             ways_total += 1 #add one to the valid combinations count
-    yield ways_total #returns the total number of ways to make change
+    return ways_total #returns the total number of ways to make change
 
 def lowest_score(names, scores):
     lowest_score_name = names[np.argmin(scores)]
@@ -18,4 +18,7 @@ def lowest_score(names, scores):
 
 def sort_names(names, scores):
     sorted_list = sorted(zip(scores, names), reverse=True)
-    return sorted_list
+    sorted_name = []
+    for name in range(len(sorted_list)):
+        sorted_name.append(sorted_list[name][1])
+    return sorted_name
