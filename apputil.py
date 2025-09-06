@@ -18,7 +18,7 @@ def ways(cents, coin_types=[1, 5]):
         print(f'{way[0]} nickels and {way[1]} pennies') #print out the different ways to make change
     return ways_total #returns the total number of ways to make change
 
-'''
+
 #optional variation for any coin types
 
 def ways(cents, coin_types=[1, 5]):
@@ -51,7 +51,7 @@ def ways(cents, coin_types=[1, 5]):
         for coin in range(len(way)):
             print(f'{way[coin]} of {sorted_coin_types[coin]} cent coins', end=', ' if coin < len(way)-1 else '\n')
     return ways_total #returns the total number of ways to make change
-'''
+
 
 def lowest_score(names, scores):
     print("The lowest score is", np.min(scores), "from:", names[np.argmin(scores)]) #added print statement to display the lowest score and name corresponding to it
